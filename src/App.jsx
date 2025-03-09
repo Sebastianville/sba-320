@@ -1,6 +1,6 @@
-import { useState } from 'react'
+
 import './App.css'
-import axios from 'axios'
+
 
 //! This is what must be pass: two paramters in addition to the API key https://developer.marvel.com/documentation/authorization
 
@@ -10,9 +10,11 @@ function App() {
   
 
   return (
-    <>
-      
-    </>
+    
+    <div>
+      <h1>App</h1>
+    </div>
+    
   )
 }
 

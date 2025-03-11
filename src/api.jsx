@@ -1,4 +1,5 @@
 //https://github.com/bitmakerlabs/react-marvel-api/blob/master/README.md#overview
+
 //! This is what must be pass: two paramters in addition to the API key https://developer.marvel.com/documentation/authorization
 
 //?https://stackoverflow.com/questions/69832429/not-able-to-search-for-character-name-in-marvel-api-using-nodejs
@@ -12,17 +13,24 @@ axios.defaults.baseURL = 'https://gateway.marvel.com/v1/public'
 
 //generating the timestamp and hash
 const ts = new Date().getTime()
+// console.log('hello')
+// console.log(import.meta.env.VITE_PRIVATE_API_KEY)
 
 const hash= md5(ts + import.meta.env.VITE_PRIVATE_API_KEY + import.meta.env.VITE_PUBLIC_API_KEY)
 
-const API_PARAMS = `ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
+const API_PARAMS = `ts=${ts}&apikey=${import.meta.env.VITE_PUBLIC_API_KEY}&hash=${hash}`;
 
-//Function to get dataf from a given endpoint
+//Function to get data from a given endpoint
 const getData = async(endpoint) => {
     try {
         const response = await axios.get(`${endpoint}?${API_PARAMS}`)
-        console.log(response.data)
+        //the response.data gives me a lot information but what I want is what inside the data specifically in results 
+        console.log(response.data);
+        return response.data.data.results
     } catch(e) {
         console.error(e)
     }
 }
+
+//Getting tge Marvel characters
+export const getCharacters = () => getData("/characters")

@@ -32,5 +32,19 @@ const getData = async(endpoint) => {
     }
 }
 
-//Getting tge Marvel characters
+//Getting the Marvel characters
 export const getCharacters = () => getData("/characters")
+
+
+
+//Getting a random character
+export const getRandomCharacter = async () => {
+    try {
+      const randomOffset = Math.floor(Math.random() * 1500); 
+      const characters = await getData("/characters");
+      return characters[randomOffset]; 
+    } catch (error) {
+      console.error("Error fetching random character:", error);
+      return null;
+    }
+  };

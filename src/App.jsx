@@ -1,6 +1,7 @@
 
 import './App.css'
 import MarvelDashboard from './pages/MarvelDashBoard'
+import RandomCharacter from './pages/RandomCharacter'
 import { Routes, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 
@@ -21,6 +22,7 @@ function App() {
      
       <Routes>
         <Route path="/" element={<MarvelDashboard />} />
+        <Route path="/randomcharacter" element={<RandomCharacter />} />
       </Routes>
     </div>
   );

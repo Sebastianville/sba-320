@@ -19,11 +19,14 @@ function App() {
       {/* <h1>App Router</h1> */}
       <NavBar />
 
-     
-      <Routes>
+     <div className="page-content">
+     <Routes>
         <Route path="/" element={<MarvelDashboard />} />
         <Route path="/randomcharacter" element={<RandomCharacter />} />
       </Routes>
+
+     </div>
+      
     </div>
   );
 }

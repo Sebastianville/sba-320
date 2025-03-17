@@ -1,5 +1,6 @@
 import {getRandomCharacter} from "../Api"
 import { useState } from "react"
+import "./RandomCharacter.css";
 
 function RandomCharacter () {
     const [character, setCharacter] = useState(null);
@@ -9,16 +10,25 @@ function RandomCharacter () {
     }
 
     return (
-        <div>
-            <h1>Random Marvel Character</h1>
-      {character && (
-        <div>
-          <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} width="150" />
-          <h2>{character.name}</h2>
-        </div>
-      )}
-      <button onClick={obtainRandomCaracter} style={{ marginTop: "10px", padding: "10px" }}>Get Random Character</button>
-    </div>
-    )
+      <div className="random-container">
+        <h1>Random Marvel Character</h1>
+  
+        {character && (
+          <div className="card">
+            <img
+              src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              alt={character.name}
+            />
+            <div className="card-content">
+              <h2>{character.name}</h2>
+            </div>
+          </div>
+        )}
+  
+        <button className="random-btn" onClick={obtainRandomCaracter}>
+          Get Random Character
+        </button>
+      </div>
+    );
 }
 export default RandomCharacter; 

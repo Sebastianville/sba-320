@@ -31,8 +31,8 @@ function MarvelDashboard() {
 
   return (
     <div>
-      <h1>Marvel Dashboard</h1>
-      <h2>Characters</h2>
+      <h1>Marvel Characters Dashboard</h1>
+      {/* <h2>Characters</h2> */}
 
       <div className="cards">
         {characters.map((character) => (

@@ -33,7 +33,7 @@ const getData = async(endpoint,  params = "") => {
 }
 
 //Getting the Marvel characters
-export const getCharacters = () => getData("/characters", "limit=20")
+export const getCharacters = () => getData("/characters", "limit=100")
 
 
 

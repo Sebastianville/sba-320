@@ -1,6 +1,6 @@
 //https://github.com/bitmakerlabs/react-marvel-api/blob/master/README.md#overview
 import { useEffect, useState } from "react";
-import { getCharacters } from "../Api";
+import { getCharacters } from "../Api.jsx";
 import './MarvelDashboard.css'
 import Spinner from "react-bootstrap/Spinner";
 

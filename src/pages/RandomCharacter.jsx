@@ -1,4 +1,4 @@
-import {getRandomCharacter} from "../Api"
+import {getRandomCharacter} from "../Api.jsx"
 import { useState } from "react"
 import "./RandomCharacter.css";
 

@@ -18,8 +18,7 @@ const ts = new Date().getTime()
 
 const publicKey = import.meta.env.VITE_PUBLIC_API_KEY
 const privateKey = import.meta.env.VITE_PRIVATE_API_KEY
-console.log(publicKey);
-console.log(privateKey)
+
 
 const hash= md5(ts + privateKey + publicKey)
 

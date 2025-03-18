@@ -1,6 +1,6 @@
 //https://github.com/bitmakerlabs/react-marvel-api/blob/master/README.md#overview
 import { useEffect, useState } from "react";
-import { getCharacters } from "../Api.jsx";
+import { getCharacters } from "../Api";
 import './MarvelDashboard.css'
 import Spinner from "react-bootstrap/Spinner";
 
@@ -12,6 +12,7 @@ function MarvelDashboard() {
   useEffect(() => {
     const fetchCharacters = async () => {
       const data = await getCharacters();
+      console.log(getCharacters())
       //I want to filter out the images that do not have an image 
       const filteredCharacter = data.filter(character => !character.thumbnail.path.includes("image_not_available"))
       setCharacters(filteredCharacter);

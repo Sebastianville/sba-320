@@ -30,7 +30,7 @@ const getData = async(endpoint,  params = "") => {
     try {
         const response = await axios.get(`${endpoint}?${API_PARAMS}&${params}`)
         //*the response.data gives me a lot information but what I want is what inside the data specifically in results 
-        console.log(response.data);
+        // console.log(response.data);
         return response.data.data.results
     } catch(e) {
         console.error(e)
